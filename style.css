@@ -1,0 +1,106 @@
+:root {
+  font-size: 62.5%;
+  --text-color: #323238;
+  --btn-hover-color: #9a86ff;
+  --button-active: rgb(148, 17, 255);
+}
+
+.hidden {
+  display: none !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  color: var(--text-color);
+  font-size: 6rem;
+
+  background-color: var(--bg-color);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  max-width: 30.1rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttons button {
+  display: flex;
+  cursor: pointer;
+  font-size: 4.8rem;
+
+  background: transparent;
+  color: var(--text-color);
+
+  width: fit-content;
+  height: fit-content;
+
+  border: none;
+  clip-path: circle(50%);
+}
+
+.buttons button:hover {
+  color: var(--btn-hover-color);
+}
+
+.sounds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.sounds .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  border-radius: 2rem;
+
+  background: #3a3a3a;
+}
+
+.sounds .button input {
+  width: 13rem;
+  height: 13rem;
+  appearance: none;
+  cursor: pointer;
+}
+
+.sounds .button i {
+  position: absolute;
+  left: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #171717;
+    --text-color: #fafafa;
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus timer</title>
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/870/870183.png"
+      type="image/x-png" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="./app.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <h1 class="timer">
+          <span class="minutes">00</span>:<span class="seconds">00</span>
+        </h1>
+        <div class="buttons">
+          <button class="play">
+            <i class="ph ph-play-circle"></i>
+          </button>
+          <button class="pause">
+            <i class="ph ph-pause-circle"></i>
+          </button>
+          <button class="stop hidden">
+            <i class="ph ph-stop-circle"></i>
+          </button>
+          <button class="plus">
+            <i class="ph ph-plus-circle"></i>
+          </button>
+          <button class="minus">
+            <i class="ph ph-minus-circle"></i>
+          </button>
+        </div>
+
+        <div class="sounds">
+          <div class="button">
+            <input type="checkbox" id="rain" />
+            <i class="ph ph-cloud-rain"></i>
+          </div>
+          <div class="button">
+            <input type="checkbox" id="tree" />
+            <i class="ph ph-tree"></i>
+          </div>
+          <div class="button">
+            <input type="checkbox" id="store" />
+            <i class="ph ph-storefront"></i>
+          </div>
+          <div class="button">
+            <input type="checkbox" id="fire" />
+            <i class="ph ph-fire"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
