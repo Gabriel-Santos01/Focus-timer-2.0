@@ -2,7 +2,7 @@
   font-size: 62.5%;
   --text-color: #323238;
   --btn-hover-color: #9a86ff;
-  --button-active: rgb(148, 17, 255);
+  --button-active: rgb(128, 16, 220);
 }
 
 .hidden {
@@ -86,6 +86,10 @@ body {
   background: #3a3a3a;
 }
 
+.store:checked {
+  background: var(--button-active);
+}
+
 .sounds .button input {
   width: 13rem;
   height: 13rem;
@@ -102,5 +106,6 @@ body {
   :root {
     --bg-color: #171717;
     --text-color: #fafafa;
+    --button-active: rgb(148, 17, 255);
   }
 }
