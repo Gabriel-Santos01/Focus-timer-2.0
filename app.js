@@ -9,6 +9,8 @@ const sec = document.querySelector('.seconds')
 play.addEventListener('click', () => {
   playPause()
   countdown()
+  plus.disabled = true
+  minus.disabled = true
 })
 
 stop.addEventListener('click', () => {
@@ -44,6 +46,7 @@ function countdown() {
 
     if (minutes <= 0 && seconds == 1) {
       playPause()
+      clearDisplay()
 
       return
     }
@@ -61,16 +64,26 @@ function countdown() {
 }
 
 function playPause() {
-  play.classList.toggle('hidden')
-  stop.classList.toggle('hidden')
+  if (sec.textContent != '00') {
+    play.classList.toggle('hidden')
+    pause.classList.toggle('hidden')
+    stop.classList.remove('hidden')
+  } else {
+    play.classList.toggle('hidden')
+    stop.classList.toggle('hidden')
+  }
 }
 
 function reset() {
-  play.classList.toggle('hidden')
-  stop.classList.toggle('hidden')
+  play.classList.remove('hidden')
+  pause.classList.remove('hidden')
+  stop.classList.add('hidden')
 }
 
 function clearDisplay() {
   min.innerHTML = String(timeSeted).padStart(2, '0')
   sec.innerHTML = '00'
+
+  plus.disabled = false
+  minus.disabled = false
 }

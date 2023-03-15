@@ -3,6 +3,7 @@
   --text-color: #323238;
   --btn-hover-color: #9a86ff;
   --button-active: rgb(128, 16, 220);
+  --disabled-color: #a8a8a8;
 }
 
 .hidden {
@@ -65,6 +66,10 @@ body {
 
 .buttons button:hover {
   color: var(--btn-hover-color);
+}
+
+:where(.plus:disabled, .minus:disabled) i {
+  color: var(--disabled-color);
 }
 
 .sounds {
