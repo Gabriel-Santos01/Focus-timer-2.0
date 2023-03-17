@@ -13,11 +13,19 @@ const btnTree = document.querySelector('#tree')
 const btnStore = document.querySelector('#store')
 const btnFire = document.querySelector('#fire')
 
+pause.disabled = true
+
 play.addEventListener('click', () => {
-  playPause()
-  countdown()
-  plus.disabled = true
-  minus.disabled = true
+  if (sec.textContent == '00' && min.textContent == '00') {
+    sec.textContent = '00'
+    min.textContent = '00'
+  } else {
+    playPause()
+    countdown()
+    plus.disabled = true
+    minus.disabled = true
+    pause.disabled = false
+  }
 })
 
 stop.addEventListener('click', () => {
@@ -54,6 +62,7 @@ function countdown() {
     if (minutes <= 0 && seconds == 1) {
       playPause()
       clearDisplay()
+      timeAnd()
 
       return
     }
@@ -67,7 +76,7 @@ function countdown() {
     sec.textContent = String(seconds - 1).padStart(2, '0')
 
     countdown()
-  }, 10)
+  }, 1000)
 }
 
 function playPause() {
@@ -93,6 +102,7 @@ function clearDisplay() {
 
   plus.disabled = false
   minus.disabled = false
+  pause.disabled = true
 }
 
 const resetTheme = () => {
@@ -116,6 +126,7 @@ btnFire.addEventListener('click', () => {
   treeSound.pause()
   if (btnFire.checked == true) {
     fireSound.play()
+    fireSound.loop = true
   } else {
     fireSound.pause()
   }
@@ -130,6 +141,7 @@ btnRain.addEventListener('click', () => {
   treeSound.pause()
   if (btnRain.checked == true) {
     rainSound.play()
+    rainSound.loop = true
   } else {
     rainSound.pause()
   }
@@ -144,6 +156,7 @@ btnStore.addEventListener('click', () => {
   treeSound.pause()
   if (btnStore.checked == true) {
     storeSound.play()
+    storeSound.loop = true
   } else {
     storeSound.pause()
   }
@@ -158,6 +171,7 @@ btnTree.addEventListener('click', () => {
   fireSound.pause()
   if (btnTree.checked == true) {
     treeSound.play()
+    treeSound.loop = true
   } else {
     treeSound.pause()
   }
@@ -167,6 +181,13 @@ const rainSound = new Audio('./assets/sounds/rain.mp3')
 const treeSound = new Audio('./assets/sounds/forest.mp3')
 const storeSound = new Audio('./assets/sounds/coffeeShop.mp3')
 const fireSound = new Audio('./assets/sounds/fire.mp3')
+const timeFinish = new Audio(
+  'https://pomofocus.io/audios/alarms/alarm-wood.mp3'
+)
+
+function timeAnd() {
+  timeFinish.play()
+}
 
 const rainRage = document.querySelector('#rainSound')
 const treeRage = document.querySelector('#treeSound')

@@ -70,7 +70,7 @@ body {
   color: var(--btn-hover-color);
 }
 
-:where(.plus:disabled, .minus:disabled) i {
+:where(.plus:disabled, .minus:disabled, .pause:disabled) i {
   color: var(--disabled-color);
 }
 
