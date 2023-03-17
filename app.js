@@ -6,6 +6,13 @@ const minus = document.querySelector('.minus')
 const min = document.querySelector('.minutes')
 const sec = document.querySelector('.seconds')
 
+const btnThemes = document.querySelectorAll('.button')
+
+const btnRain = document.querySelector('#rain')
+const btnTree = document.querySelector('#tree')
+const btnStore = document.querySelector('#store')
+const btnFire = document.querySelector('#fire')
+
 play.addEventListener('click', () => {
   playPause()
   countdown()
@@ -87,3 +94,110 @@ function clearDisplay() {
   plus.disabled = false
   minus.disabled = false
 }
+
+const resetTheme = () => {
+  if (btnRain.checked == true) {
+    btnFire.checked = false
+    btnTree.checked = false
+    btnStore.checked = false
+  }
+}
+
+// btnThemes.forEach(elemento => {
+//   elemento.checked = false
+// })
+
+btnFire.addEventListener('click', () => {
+  btnRain.checked = false
+  btnTree.checked = false
+  btnStore.checked = false
+  storeSound.pause()
+  rainSound.pause()
+  treeSound.pause()
+  if (btnFire.checked == true) {
+    fireSound.play()
+  } else {
+    fireSound.pause()
+  }
+})
+
+btnRain.addEventListener('click', () => {
+  btnFire.checked = false
+  btnTree.checked = false
+  btnStore.checked = false
+  storeSound.pause()
+  fireSound.pause()
+  treeSound.pause()
+  if (btnRain.checked == true) {
+    rainSound.play()
+  } else {
+    rainSound.pause()
+  }
+})
+
+btnStore.addEventListener('click', () => {
+  btnFire.checked = false
+  btnRain.checked = false
+  btnTree.checked = false
+  fireSound.pause()
+  rainSound.pause()
+  treeSound.pause()
+  if (btnStore.checked == true) {
+    storeSound.play()
+  } else {
+    storeSound.pause()
+  }
+})
+
+btnTree.addEventListener('click', () => {
+  btnFire.checked = false
+  btnRain.checked = false
+  btnStore.checked = false
+  storeSound.pause()
+  rainSound.pause()
+  fireSound.pause()
+  if (btnTree.checked == true) {
+    treeSound.play()
+  } else {
+    treeSound.pause()
+  }
+})
+
+const rainSound = new Audio('./assets/sounds/rain.mp3')
+const treeSound = new Audio('./assets/sounds/forest.mp3')
+const storeSound = new Audio('./assets/sounds/coffeeShop.mp3')
+const fireSound = new Audio('./assets/sounds/fire.mp3')
+
+const rainRage = document.querySelector('#rainSound')
+const treeRage = document.querySelector('#treeSound')
+const storeRage = document.querySelector('#storeSound')
+const fireRage = document.querySelector('#fireSound')
+
+const fireRangeValue = document.querySelector('#fireRangeValue')
+const rainRangeValue = document.querySelector('#rainRangeValue')
+const treeRangeValue = document.querySelector('#treeRangeValue')
+const storeRangeValue = document.querySelector('#storeRangeValue')
+
+fireRage.addEventListener('input', function () {
+  let value = fireRage.value
+  fireSound.volume = (value / 100).toFixed(1)
+  fireRangeValue.textContent = value + '%'
+})
+
+treeRage.addEventListener('input', function () {
+  let value = treeRage.value
+  treeSound.volume = (value / 100).toFixed(1)
+  treeRangeValue.textContent = value + '%'
+})
+
+storeRage.addEventListener('input', function () {
+  let value = storeRage.value
+  storeSound.volume = (value / 100).toFixed(1)
+  storeRangeValue.textContent = value + '%'
+})
+
+rainRage.addEventListener('input', function () {
+  let value = rainRage.value
+  rainSound.volume = (value / 100).toFixed(1)
+  rainRangeValue.textContent = value + '%'
+})

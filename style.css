@@ -4,12 +4,13 @@
   --btn-hover-color: #9a86ff;
   --button-active: rgb(128, 16, 220);
   --disabled-color: #a8a8a8;
+  --range-track-color: #a04ae7;
+  --range-tumb-color: #8120d1;
 }
 
 .hidden {
   display: none !important;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -40,7 +41,8 @@ body {
 }
 
 .content {
-  max-width: 30.1rem;
+  width: 30rem;
+  scale: clamp(1, 1.2, 1.8);
 }
 
 .buttons {
@@ -88,29 +90,81 @@ body {
   position: relative;
   border-radius: 2rem;
 
-  background: #3a3a3a;
+  background: #3a3a3aaf;
 }
 
-.store:checked {
+.sounds .button label {
+  position: absolute;
+  left: auto;
+  cursor: pointer;
+}
+
+.sounds .button input[type='checkbox']:checked {
   background: var(--button-active);
+  border-radius: 2rem;
 }
 
-.sounds .button input {
+.sounds .button input[type='checkbox'] {
   width: 13rem;
   height: 13rem;
   appearance: none;
   cursor: pointer;
 }
 
-.sounds .button i {
+.sounds .button input[type='range'] {
   position: absolute;
-  left: auto;
+  bottom: 1.4rem;
+  width: 80%;
 }
 
+input[type='range']::-webkit-slider-runnable-track {
+  background-color: #00bfff;
+  border-radius: 8.5rem;
+  height: 0.4rem;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -6px;
+  background-color: #9b35de;
+  border-radius: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+:is(#rain:checked, #tree:checked, #store:checked, #fire:checked) ~ .range {
+  visibility: visible;
+}
+
+.rangeValue {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 2.4rem;
+}
+
+.range {
+  visibility: hidden;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #171717;
     --text-color: #fafafa;
     --button-active: rgb(148, 17, 255);
+  }
+}
+
+@media (min-width: 1000px) {
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 65rem;
+    max-width: 100rem;
+  }
+
+  .sounds {
+    width: 28rem;
   }
 }

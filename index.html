@@ -23,43 +23,64 @@
   <body>
     <div class="wrapper">
       <div class="content">
-        <h1 class="timer">
-          <span class="minutes">00</span>:<span class="seconds">00</span>
-        </h1>
-        <div class="buttons">
-          <button class="play">
-            <i class="ph ph-play-circle"></i>
-          </button>
-          <button class="pause">
-            <i class="ph ph-pause-circle"></i>
-          </button>
-          <button class="stop hidden">
-            <i class="ph ph-stop-circle"></i>
-          </button>
-          <button class="plus">
-            <i class="ph ph-plus-circle"></i>
-          </button>
-          <button class="minus">
-            <i class="ph ph-minus-circle"></i>
-          </button>
+        <div class="countdown">
+          <h1 class="timer">
+            <span class="minutes">00</span>:<span class="seconds">00</span>
+          </h1>
+          <div class="buttons">
+            <button class="play">
+              <i class="ph ph-play-circle"></i>
+            </button>
+            <button class="pause">
+              <i class="ph ph-pause-circle"></i>
+            </button>
+            <button class="stop hidden">
+              <i class="ph ph-stop-circle"></i>
+            </button>
+            <button class="plus">
+              <i class="ph ph-plus-circle"></i>
+            </button>
+            <button class="minus">
+              <i class="ph ph-minus-circle"></i>
+            </button>
+          </div>
         </div>
 
-        <div class="sounds">
+        <div class="sounds rain">
           <div class="button">
-            <input type="checkbox" id="rain" />
-            <i class="ph ph-cloud-rain"></i>
+            <input type="checkbox" id="rain" data-theme="rain" />
+            <label for="rain">
+              <i class="ph ph-cloud-rain"></i>
+            </label>
+            <input class="range" type="range" id="rainSound" />
+            <span class="range rangeValue" id="rainRangeValue">50%</span>
           </div>
-          <div class="button">
-            <input type="checkbox" id="tree" />
-            <i class="ph ph-tree"></i>
+
+          <div class="button tree">
+            <input type="checkbox" id="tree" data-theme="tree" />
+            <label for="tree">
+              <i class="ph ph-tree"></i>
+            </label>
+            <input class="range" type="range" id="treeSound" />
+            <span class="range rangeValue" id="treeRangeValue">50%</span>
           </div>
-          <div class="button">
-            <input type="checkbox" id="store" />
-            <i class="ph ph-storefront"></i>
+
+          <div class="button store">
+            <input type="checkbox" id="store" data-theme="coffeeStore" />
+            <label for="store">
+              <i class="ph ph-storefront"></i>
+            </label>
+            <input class="range" type="range" id="storeSound" />
+            <span class="range rangeValue" id="storeRangeValue">50%</span>
           </div>
-          <div class="button">
-            <input type="checkbox" id="fire" />
-            <i class="ph ph-fire"></i>
+
+          <div class="button fire">
+            <input type="checkbox" id="fire" data-theme="fire" />
+            <label for="fire">
+              <i class="ph ph-fire"></i>
+            </label>
+            <input class="range" type="range" id="fireSound" />
+            <span class="range rangeValue" id="fireRangeValue">50%</span>
           </div>
         </div>
       </div>
