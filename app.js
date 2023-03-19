@@ -45,8 +45,13 @@ plus.addEventListener('click', () => {
 })
 
 minus.addEventListener('click', () => {
-  timeSeted -= 5
   min.innerHTML = String(timeSeted).padStart(2, '0')
+  if (min.textContent == '00' && sec.textContent == '00') {
+    min.textContent = '00'
+    sec.textContent = '00'
+  } else {
+    timeSeted -= 5
+  }
 })
 
 let timeSeted = 0
