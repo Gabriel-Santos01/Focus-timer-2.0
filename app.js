@@ -40,8 +40,12 @@ pause.addEventListener('click', () => {
 })
 
 plus.addEventListener('click', () => {
-  timeSeted += 5
-  min.innerHTML = String(timeSeted).padStart(2, '0')
+  if (min.textContent >= '95') {
+    min.textContent = '95'
+  } else {
+    timeSeted += 5
+    min.innerHTML = String(timeSeted).padStart(2, '0')
+  }
 })
 
 minus.addEventListener('click', () => {
@@ -81,7 +85,7 @@ function countdown() {
     sec.textContent = String(seconds - 1).padStart(2, '0')
 
     countdown()
-  }, 1000)
+  }, 10)
 }
 
 function playPause() {
