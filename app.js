@@ -85,7 +85,7 @@ function countdown() {
     sec.textContent = String(seconds - 1).padStart(2, '0')
 
     countdown()
-  }, 10)
+  }, 1000)
 }
 
 function playPause() {
