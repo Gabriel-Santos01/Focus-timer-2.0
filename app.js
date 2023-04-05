@@ -58,7 +58,7 @@ minus.addEventListener('click', () => {
   }
 })
 
-let timeSeted = 0
+let timeSeted = String(min.textContent).padStart(2, '0')
 let timerTimeOut
 
 function countdown() {
@@ -72,6 +72,7 @@ function countdown() {
       playPause()
       clearDisplay()
       timeAnd()
+      document.title = 'Focus timer'
 
       return
     }
@@ -83,6 +84,10 @@ function countdown() {
     }
 
     sec.textContent = String(seconds - 1).padStart(2, '0')
+
+    document.title = `Focus timer ${String(minutes).padStart(2, '0')}:${String(
+      seconds - 1
+    ).padStart(2, '0')} `
 
     countdown()
   }, 1000)
