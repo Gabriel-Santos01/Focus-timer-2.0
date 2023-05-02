@@ -72,6 +72,15 @@ body {
   color: var(--btn-hover-color);
 }
 
+.timer {
+  display: flex;
+  justify-content: center;
+}
+
+.dots {
+  transform: translateY(-1rem);
+}
+
 :where(.plus:disabled, .minus:disabled, .pause:disabled) i {
   color: var(--disabled-color);
   cursor: not-allowed;

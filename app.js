@@ -43,7 +43,7 @@ plus.addEventListener('click', () => {
   if (min.textContent >= '95') {
     min.textContent = '95'
   } else {
-    timeSeted += 5
+    timeSeted = Number(timeSeted) + 5
     min.innerHTML = String(timeSeted).padStart(2, '0')
   }
 })
@@ -85,6 +85,7 @@ function countdown() {
 
     sec.textContent = String(seconds - 1).padStart(2, '0')
 
+    setTimeout({}, 1000)
     document.title = `Focus timer ${String(minutes).padStart(2, '0')}:${String(
       seconds - 1
     ).padStart(2, '0')} `
