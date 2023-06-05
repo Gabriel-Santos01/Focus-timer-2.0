@@ -19,7 +19,7 @@
   box-sizing: border-box;
   text-decoration: none;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
 
@@ -108,24 +108,25 @@ body {
 }
 
 .sounds .button label {
+  height: 46%;
   position: absolute;
   left: auto;
   cursor: pointer;
 }
 
-.sounds .button input[type='checkbox']:checked {
+.sounds .button input[type="checkbox"]:checked {
   background: var(--button-active);
   border-radius: 2rem;
 }
 
-.sounds .button input[type='checkbox'] {
+.sounds .button input[type="checkbox"] {
   width: 13rem;
   height: 13rem;
   appearance: none;
   cursor: pointer;
 }
 
-.sounds .button input[type='range'] {
+.sounds .button input[type="range"] {
   opacity: 0;
   position: absolute;
   bottom: 1.4rem;
@@ -138,18 +139,18 @@ body {
   transition-delay: 200ms;
 }
 
-.sounds .button:hover input[type='range'],
+.sounds .button:hover input[type="range"],
 .sounds .button:hover .rangeValue {
   opacity: 1;
 }
 
-input[type='range']::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   background-color: var(--range-track-color);
   border-radius: 8.5rem;
   height: 0.4rem;
 }
 
-input[type='range']::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   margin-top: -6px;
